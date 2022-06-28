@@ -1,11 +1,9 @@
 const express = require("express");
+const router = require("./routes/router")
 
-const server = express();
+const app = express();
+app.use(express.json());
 
-server.use(express.json());
+app.use(router);
 
-server.listen(3000);
-
-server.get("/", (req, res) => {
-    return res.send ({ message: "testeeee"})
-});
+app.listen(3000);
