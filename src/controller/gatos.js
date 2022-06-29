@@ -96,10 +96,21 @@ const consultarEditarAnimal = (req, res) => {
     }
 }
 
+const consultarDeletarAnimar = (req, res) => {
+    const animais = lista.find(
+        (animais) => animais.id === Number(req.params.idConsulta)
+    );
+    const indice = lista.indexOf(animais);
+
+    lista.splice(indice, 1);
+    res.json(animais)
+}
+
 module.exports = {
   consultarTodosOsAnimais,
   consultarAnimalEspecifico,
   animalAleatorio,
   cadastrarAnimais,
-  consultarEditarAnimal
+  consultarEditarAnimal,
+  consultarDeletarAnimar
 };

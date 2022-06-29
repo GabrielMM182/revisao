@@ -14,4 +14,6 @@ router.post("/animais", animaisController.cadastrarAnimais);
 
 router.put("/animais/:idConsulta", animaisController.consultarEditarAnimal);
 
+router.delete("/animais/:idConsulta", animaisController.consultarDeletarAnimar);
+
 module.exports = router;
