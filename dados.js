@@ -2,7 +2,7 @@ const fs = require("fs");
 
 let lista;
 
-function salvarGatos() {
+function salvarAnimais() {
     const json = JSON.stringify(lista, null, 2);
     fs.writeFileSync("bd.json", json);
 }
@@ -104,4 +104,4 @@ try {
     ]
 }
 
-module.exports = { lista, salvarGatos};
+module.exports = { lista, salvarAnimais};
