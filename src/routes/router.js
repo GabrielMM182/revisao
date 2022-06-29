@@ -12,4 +12,6 @@ router.get("/animaisRandom", animaisController.animalAleatorio)
 
 router.post("/animais", animaisController.cadastrarAnimais);
 
+router.put("/animais/:idConsulta", animaisController.consultarEditarAnimal);
+
 module.exports = router;

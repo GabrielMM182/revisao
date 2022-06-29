@@ -75,9 +75,31 @@ const cadastrarAnimais = (req, res) => {
   res.json(novoAnimal)
 };
 
+const consultarEditarAnimal = (req, res) => {
+    const animais = lista.find(
+        (animais) => animais.id === Number(req.params.idConsulta)
+    );
+
+    if (animais) {
+        // substitui oq ja existe
+        animais.nome = req.body.nome;
+        animais.especie = req.body.especie;
+        animais.humor = req.body.humor;
+        res.json(animais)
+    } else {
+        // inserindo novo
+        const novoAnimal = req.body;
+        lista.push(novoAnimal);
+        salvarAnimais()
+
+        res.json(novoAnimal);
+    }
+}
+
 module.exports = {
   consultarTodosOsAnimais,
   consultarAnimalEspecifico,
   animalAleatorio,
   cadastrarAnimais,
+  consultarEditarAnimal
 };
