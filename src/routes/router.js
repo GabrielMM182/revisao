@@ -1,9 +1,13 @@
 const express = require("express");
 
-const animaisController = require("../controller/gatos")
+const animaisController = require("../controller/gatos");
 
 const router = express();
 
-router.get("/gatos", animaisController.consultarTodosOsAnimais)
+router.get("/animais", animaisController.consultarTodosOsAnimais);
+
+router.get("/animais/:idConsulta", animaisController.consultarAnimalEspecifico);
+
+router.get("/animaisRandom", animaisController.mesAleatorio)
 
 module.exports = router;
